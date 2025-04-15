@@ -15,15 +15,9 @@ public class Participant {
 
     @NonNull
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    String  email;
 
-    Integer id;
 
-    @NonNull
-    String name;
 
-    public Participant(String name) {
 
-        this.name = name;
-    }
 }
