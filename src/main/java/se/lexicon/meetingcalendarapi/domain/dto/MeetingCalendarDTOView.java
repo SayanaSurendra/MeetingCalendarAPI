@@ -1,6 +1,5 @@
 package se.lexicon.meetingcalendarapi.domain.dto;
 
-import jakarta.persistence.SecondaryTable;
 import lombok.Builder;
 import se.lexicon.meetingcalendarapi.domain.entity.Participant;
 
@@ -19,7 +18,7 @@ public record MeetingCalendarDTOView(
 
         LocalTime meetingTime,
         String meetingDescription,
-        Set<Participant> participants
+        Set<ParticipantDTOView> participants
 ) {
 
 
