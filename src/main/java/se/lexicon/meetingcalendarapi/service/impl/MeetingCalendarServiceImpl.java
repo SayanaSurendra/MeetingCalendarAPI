@@ -195,8 +195,7 @@ public class MeetingCalendarServiceImpl implements MeetingCalendarService {
     private MeetingCalendarDTOView convertToMeetingDTOView(MeetingCalendar meeting) {
         Set<ParticipantDTOView> participantDTOViews = meeting.getParticipants().stream()
                 .map(participant -> new ParticipantDTOView(
-                        participant.getEmail(),
-                        null
+                        participant.getEmail()
                 ))
                 .collect(Collectors.toSet());
         return MeetingCalendarDTOView.builder().meetingId(meeting.getMeetingId()).meetingTitle(meeting.getMeetingTitle())

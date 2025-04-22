@@ -11,12 +11,7 @@ import java.util.Set;
 public record ParticipantDTOForm(
         @NotBlank(message = "Email is mandatory")
         @Email(message="Invalid email format")
-        String email,
-
-        @NotNull(message = "meetings cannot be null")
-        @Size(min = 1, message = "a Participant must have atleast one meeting")
-        @Valid
-        Set<MeetingCalendarDTOForm> meetings
+        String email
 
 
 ) {

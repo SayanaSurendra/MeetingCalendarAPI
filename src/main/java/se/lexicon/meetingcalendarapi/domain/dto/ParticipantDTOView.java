@@ -5,6 +5,6 @@ import lombok.Builder;
 import java.util.Set;
 
 @Builder
-public record ParticipantDTOView(String email, Set<MeetingCalendarDTOView> meetings) {
+public record ParticipantDTOView(String email) {
 
 }
