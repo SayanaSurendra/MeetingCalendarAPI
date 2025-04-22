@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "503ce79e-4998-45e5-b504-1792e399ccd1",
+		"name": "MeetingCalendar APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41809665"
+	},
+	"item": [
+		{
+			"name": "Get List of Meetings",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/meetingCalendar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"meetingCalendar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get List of Meetings",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/meetingCalendar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"meetingCalendar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 09:46:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"meetingId\": 1,\n        \"meetingTitle\": \"Java Meeting\",\n        \"meetingLevel\": \"Team\",\n        \"meetingDate\": \"2025-04-24\",\n        \"meetingTime\": \"13:33:00\",\n        \"meetingDescription\": \"gfdgdg\",\n        \"participants\": [\n            {\n                \"email\": \"testuser@gmail.com\"\n            },\n            {\n                \"email\": \"John@gmail.com\"\n            }\n        ]\n    },\n    {\n        \"meetingId\": 2,\n        \"meetingTitle\": \"kickoff\",\n        \"meetingLevel\": \"Department\",\n        \"meetingDate\": \"2025-04-25\",\n        \"meetingTime\": \"14:34:00\",\n        \"meetingDescription\": \"bv bbn\",\n        \"participants\": [\n            {\n                \"email\": \"testuser@gmail.com\"\n            },\n            {\n                \"email\": \"John@gmail.com\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GetById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/meetingCalendar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"meetingCalendar",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 09:55:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meetingId\": 1,\n    \"meetingTitle\": \"Java Meeting 12\",\n    \"meetingLevel\": \"Team\",\n    \"meetingDate\": \"2025-04-24\",\n    \"meetingTime\": \"13:33:00\",\n    \"meetingDescription\": \"gfdgdg\",\n    \"participants\": [\n        {\n            \"email\": \"testuser@gmail.com\"\n        },\n        {\n            \"email\": \"John@gmail.com\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Meeting",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Update Meeting",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"meetingId\": 1,\r\n    \"meetingTitle\": \"Java Meeting 1\",\r\n    \"meetingLevel\": \"Team\",\r\n    \"meetingDate\": \"2025-04-24\",\r\n    \"meetingTime\": \"13:33:00\",\r\n    \"meetingDescription\": \"gfdgdg\",\r\n    \"participants\": [\r\n      {\r\n        \"email\": \"testuser@gmail.com\"\r\n      },\r\n      {\r\n        \"email\": \"John@gmail.com\"\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/meetingCalendar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"meetingCalendar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 09:59:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"meetingId\": 1,\n        \"meetingTitle\": \"Java Meeting 12\",\n        \"meetingLevel\": \"Team\",\n        \"meetingDate\": \"2025-04-24\",\n        \"meetingTime\": \"13:33:00\",\n        \"meetingDescription\": \"gfdgdg\",\n        \"participants\": [\n            {\n                \"email\": \"testuser@gmail.com\"\n            },\n            {\n                \"email\": \"John@gmail.com\"\n            }\n        ]\n    },\n    {\n        \"meetingId\": 2,\n        \"meetingTitle\": \"kickoff\",\n        \"meetingLevel\": \"Department\",\n        \"meetingDate\": \"2025-04-25\",\n        \"meetingTime\": \"14:34:00\",\n        \"meetingDescription\": \"bv bbn\",\n        \"participants\": [\n            {\n                \"email\": \"testuser@gmail.com\"\n            },\n            {\n                \"email\": \"John@gmail.com\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete meeting",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "DeleteMeeting",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/meetingCalendar/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"meetingCalendar",
+								"2"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 10:02:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Create Meeting",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Create Meeting",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"meetingTitle\": \"Java Meeting 11\",\r\n    \"meetingLevel\": \"Team\",\r\n    \"meetingDate\": \"2025-04-24\",\r\n    \"meetingTime\": \"13:33:00\",\r\n    \"meetingDescription\": \"gfdgdg\",\r\n    \"participants\": [\r\n      {\r\n        \"email\": \"testuser@gmail.com\"\r\n      },\r\n      {\r\n        \"email\": \"John@gmail.com\"\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/meetingCalendar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"meetingCalendar"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Apr 2025 10:04:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meetingId\": 3,\n    \"meetingTitle\": \"Java Meeting 11\",\n    \"meetingLevel\": \"Team\",\n    \"meetingDate\": \"2025-04-24\",\n    \"meetingTime\": \"13:33:00\",\n    \"meetingDescription\": \"gfdgdg\",\n    \"participants\": [\n        {\n            \"email\": \"testuser@gmail.com\"\n        },\n        {\n            \"email\": \"John@gmail.com\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
