@@ -11,7 +11,7 @@ public class RestExceptionHandler  extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({DataNotFoundException.class, IllegalArgumentException.class})
     public ResponseEntity<ErrorResponseDto> handleCustomException(Exception ex){
-        HttpStatus status = HttpStatus.BAD_REQUEST;;
+        HttpStatus status = HttpStatus.BAD_REQUEST;
         ErrorResponseDto errorResponse= new ErrorResponseDto(status, ex.getMessage());
         return ResponseEntity.status(status).body(errorResponse);
     }

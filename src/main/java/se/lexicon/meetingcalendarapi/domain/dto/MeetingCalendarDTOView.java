@@ -1,7 +1,6 @@
 package se.lexicon.meetingcalendarapi.domain.dto;
 
 import lombok.Builder;
-import se.lexicon.meetingcalendarapi.domain.entity.Participant;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
