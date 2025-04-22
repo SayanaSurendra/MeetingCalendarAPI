@@ -1,7 +1,6 @@
 package se.lexicon.meetingcalendarapi.service.impl;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,7 +13,6 @@ import se.lexicon.meetingcalendarapi.domain.entity.MeetingCalendar;
 import se.lexicon.meetingcalendarapi.domain.entity.Participant;
 import se.lexicon.meetingcalendarapi.repository.MeetingCalendarRepository;
 import se.lexicon.meetingcalendarapi.repository.PartcipantRepository;
-import se.lexicon.meetingcalendarapi.service.MeetingCalendarService;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -22,9 +20,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -57,9 +55,9 @@ class MeetingCalendarServiceImplTest {
         .meetingTime(LocalTime.of(10, 30)).participants(participants).build();
     }
 
-    @DisplayName("getAll meetings returns all meetings")
+
     @Test
-    void testGetAllMeetings_ReturnAllMeetings() {
+    void getAllMeetings() {
 
         when(meetingCalendarRepository.findAll()).thenReturn(List.of(meetingCalendar));
 
@@ -72,21 +70,9 @@ class MeetingCalendarServiceImplTest {
 
 
     @Test
-    void createMeeting() {
-        ParticipantDTOForm newParticipantDTOForm=new ParticipantDTOForm("newUser@gmail.com",Set.of());
-        MeetingCalendarDTOForm meetingCalendarDTOForm=new MeetingCalendarDTOForm(null,"Java Meeting","Meeting to discuss about currnet uissues",
-                "Team",LocalDate.of(2025,04,25),(LocalTime.of(10, 30)),Set.of(newParticipantDTOForm));
-
-
-
-    }
-
-
-
-    @Test
     void updateMeeting() {
-        ParticipantDTOForm existingParticipantDTOForm=new ParticipantDTOForm("existigUser@gmail.com",Set.of());
-        ParticipantDTOForm newParticipantDTOForm=new ParticipantDTOForm("newUser@gmail.com",Set.of());
+        ParticipantDTOForm existingParticipantDTOForm=new ParticipantDTOForm("existigUser@gmail.com");
+        ParticipantDTOForm newParticipantDTOForm=new ParticipantDTOForm("newUser@gmail.com");
         MeetingCalendarDTOForm meetingCalendarDTOForm=new MeetingCalendarDTOForm(1,"Java Meeting","Meeting to discuss about currnet uissues",
                 "Team",LocalDate.of(2025,04,25),(LocalTime.of(10, 30)),Set.of(existingParticipantDTOForm,newParticipantDTOForm));
 
@@ -104,9 +90,9 @@ class MeetingCalendarServiceImplTest {
 
 
 
-    @DisplayName("getMeetingById meetings returns meeting for the given id")
+
     @Test
-    void testGetMeetingById_ReturnsMeeting() {
+    void getMeetingById() {
         when(meetingCalendarRepository.findById(1)).thenReturn(Optional.of(meetingCalendar));
         MeetingCalendarDTOView meetingCalendarDTOView=meetingCalendarService.getMeetingById(1);
         assertNotNull(meetingCalendarDTOView);
