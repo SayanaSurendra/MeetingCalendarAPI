@@ -10,7 +10,7 @@ A RESTful backend service built using Spring Boot, Java 17, and Spring Data JPA 
 3. [Technologies Used](#technologies-used)
 4. [Set up](#set-up)
 5. [Project Structure](#project-structure)
-6. [Entity Relationships](#entity-relationships)
+6. [Entity Relationship](#entity-relationships)
 7. [API Endpoints](#api-endpoints)
 8. [Swagger Documentation](#swagger-documentation)
 9. [Future Enhancements](#future-enhancements)
@@ -133,7 +133,7 @@ MeetingCalendarAPI/
  - **application.properties** : Contains application-level configuration such as database connection and JPA settings.
 
 
-## Entity Relationships
+## Entity Relationship
 
 The application models a many-to-many relationship between Meeting and Participant. Each meeting can have multiple participants and each participant can be part of multiple meetings. This relationship is managed through a join table in the database using JPA annotations.
 
@@ -169,7 +169,7 @@ Below are few features planned for future development to enhance the functionali
 
 - **Participant Management**: Manage participant details.
 
--**Custom Query Filters** : Filter meetings by date, user ,title etc
+- **Custom Query Filters** : Filter meetings by date, user ,title etc
 
 
 
